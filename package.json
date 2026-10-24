@@ -1,0 +1,23 @@
+{
+  "name": "gp-whitelabel",
+  "version": "1.0.0",
+  "description": "White-labels GlotPress to match your brand identity.",
+  "license": "GPL-2.0-or-later",
+  "private": true,
+  "files": [
+    "gp-whitelabel.php",
+    "includes/",
+    "templates/",
+    "assets/",
+    "vendor-prefixed/"
+  ],
+  "scripts": {
+    "composer:dev": "composer install --no-interaction",
+    "composer:prod": "composer install --no-dev --optimize-autoloader --no-interaction",
+    "zip": "wp-scripts plugin-zip",
+    "build": "npm run composer:dev && npm run composer:prod && npm run zip && npm run composer:dev"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^36.1.0"
+  }
+}

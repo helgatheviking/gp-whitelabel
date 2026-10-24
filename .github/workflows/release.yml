@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      # Strauss runs from the post-install-cmd hook, so never pass --no-scripts here.
+      - name: Install production Composer dependencies
+        run: composer install --no-dev --optimize-autoloader --no-interaction
+
+      - name: Verify prefixed vendor libraries
+        run: |
+          if [ ! -f vendor-prefixed/autoload.php ]; then
+            echo "::error::vendor-prefixed/autoload.php is missing; Strauss did not run."
+            exit 1
+          fi
+          if [ -d vendor/afragen ]; then
+            echo "::error::vendor/afragen exists; unprefixed packages would ship."
+            exit 1
+          fi
+
+      - name: Build plugin zip
+        run: npm run zip
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "${{ github.ref_name }}" glotpress-whitelabel.zip --title "${{ github.ref_name }}" --generate-notes
