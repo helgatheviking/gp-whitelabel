@@ -170,7 +170,15 @@ body,
 	background-color: transparent !important;
 	border: none !important;
 	margin-bottom: 1.5rem;
+	margin-left: 0 !important; /* Core uses negative side margins; keep it on the 1.5rem content gutter. */
+	margin-right: 0 !important;
 	box-shadow: none !important;
+}
+
+/* Keep the project list on the same gutter as the header card and action links. */
+#projects dl {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
 }
 
 .breadcrumb li a {
@@ -409,6 +417,8 @@ body,
 .gp-footer {
 	border-top: 1px solid var(--gp-color-border-subtle);
 	margin-top: 4rem;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
 	padding-top: 1.5rem;
 }
 
