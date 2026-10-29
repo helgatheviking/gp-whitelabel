@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: GlotPress Whitelabel Studio
+ * Plugin Name: Whitelabel Customization for GlotPress
  * Description: White-labels GlotPress to match your brand identity, custom logo, tagline, fonts, and color schemes via a dedicated Customizer page.
  * Version: 1.0.0
  * Author: helgatheviking

@@ -1,6 +1,6 @@
 <?php
 /**
- * GlotPress Whitelabel Studio - Admin Settings
+ * Whitelabel Customization for GlotPress - Admin Settings
  *
  * @package GlotPress_Whitelabel
  */
@@ -43,7 +43,7 @@ function gp_whitelabel_get_options() {
  */
 function gp_whitelabel_add_admin_menu() {
 	add_options_page(
-		__( 'GlotPress Whitelabel Studio', 'gp-whitelabel' ),
+		__( 'Whitelabel Customization for GlotPress', 'gp-whitelabel' ),
 		__( 'GlotPress Whitelabel', 'gp-whitelabel' ),
 		'manage_options',
 		'gp-whitelabel',
@@ -120,7 +120,7 @@ function gp_whitelabel_render_admin_page() {
 	$options = gp_whitelabel_get_options();
 	?>
 	<div class="wrap gp-whitelabel-admin-wrap">
-		<h1><?php esc_html_e( 'GlotPress Whitelabel Studio Settings', 'gp-whitelabel' ); ?></h1>
+		<h1><?php esc_html_e( 'Whitelabel Customization for GlotPress Settings', 'gp-whitelabel' ); ?></h1>
 		<p class="description"><?php esc_html_e( 'Customize your GlotPress installation logo, brand identity, and color scheme.', 'gp-whitelabel' ); ?></p>
 
 		<?php settings_errors(); ?>

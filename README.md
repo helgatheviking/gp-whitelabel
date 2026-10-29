@@ -1,4 +1,4 @@
-# GlotPress Whitelabel Studio
+# Whitelabel Customization for GlotPress
 
 A WordPress plugin that rebrands the front end of a **GlotPress** site with your own logo, name, colors and footer, all set from one settings page with no theme or template edits.
 
@@ -24,7 +24,7 @@ A WordPress plugin that rebrands the front end of a **GlotPress** site with your
 
 1.  Download the latest `gp-whitelabel-x.y.z.zip` from the [Releases page](https://github.com/helgatheviking/gp-whitelabel/releases).
 2.  In WordPress, go to **Plugins > Add New > Upload Plugin** and upload the zip.
-3.  Activate **GlotPress Whitelabel Studio**.
+3.  Activate **Whitelabel Customization for GlotPress**.
 
 Install from the release zip, not a clone of this repository. The zip includes the bundled Composer dependencies that the plugin needs.
 
