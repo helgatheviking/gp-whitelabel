@@ -13,9 +13,9 @@ gp_tmpl_header();
 						<circle cx="11" cy="11" r="8"></circle>
 						<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
 					</svg>
-					<input type="text" name="s" id="project-search-input" value="<?php echo isset( $_GET['s'] ) ? esc_attr( wp_unslash( $_GET['s'] ) ) : ''; ?>" placeholder="<?php esc_attr_e( 'Search projects...', 'glotpress' ); ?>" autocomplete="off" />
+					<input type="text" name="s" id="project-search-input" value="<?php echo isset( $_GET['s'] ) ? esc_attr( wp_unslash( $_GET['s'] ) ) : ''; ?>" placeholder="<?php esc_attr_e( 'Search projects...', 'gp-whitelabel' ); ?>" autocomplete="off" />
 					<?php if ( isset( $_GET['s'] ) && '' !== $_GET['s'] ) : ?>
-						<a href="<?php echo esc_url( gp_url( '/projects' ) ); ?>" class="clear-search-btn" title="<?php esc_attr_e( 'Clear search', 'glotpress' ); ?>">
+						<a href="<?php echo esc_url( gp_url( '/projects' ) ); ?>" class="clear-search-btn" title="<?php esc_attr_e( 'Clear search', 'gp-whitelabel' ); ?>">
 							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 								<line x1="18" y1="6" x2="6" y2="18"></line>
 								<line x1="6" y1="6" x2="18" y2="18"></line>
@@ -31,8 +31,8 @@ gp_tmpl_header();
 			<div class="search-results-heading">
 				<?php
 				printf(
-					/* translators: %s: Search query. */
-					esc_html( _n( 'Found %d result for &ldquo;%s&rdquo;', 'Found %d results for &ldquo;%s&rdquo;', count( $projects ), 'glotpress' ) ),
+					/* translators: 1: Number of results. 2: Search query. */
+					esc_html( _n( 'Found %1$d result for &ldquo;%2$s&rdquo;', 'Found %1$d results for &ldquo;%2$s&rdquo;', count( $projects ), 'gp-whitelabel' ) ),
 					count( $projects ),
 					esc_html( wp_unslash( $_GET['s'] ) )
 				);
@@ -42,9 +42,9 @@ gp_tmpl_header();
 
 		<?php if ( empty( $projects ) ) : ?>
 			<div class="search-no-results">
-				<p><?php _e( 'No projects found matching your search.', 'glotpress' ); ?></p>
+				<p><?php _e( 'No projects found matching your search.', 'gp-whitelabel' ); ?></p>
 				<?php if ( isset( $_GET['s'] ) && '' !== $_GET['s'] ) : ?>
-					<p><a href="<?php echo esc_url( gp_url( '/projects' ) ); ?>" class="button"><?php _e( 'Show all projects', 'glotpress' ); ?></a></p>
+					<p><a href="<?php echo esc_url( gp_url( '/projects' ) ); ?>" class="button"><?php _e( 'Show all projects', 'gp-whitelabel' ); ?></a></p>
 				<?php endif; ?>
 			</div>
 		<?php else : ?>

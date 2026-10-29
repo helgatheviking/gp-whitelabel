@@ -26,7 +26,7 @@
 
 			<?php if ( current_user_can( 'manage_options' ) ) : ?>
 				<p class="gp-admin-dashboard-link">
-					<a href="<?php echo esc_url( admin_url() ); ?>"><?php esc_html_e( 'Admin Dashboard', 'glotpress-whitelabel' ); ?></a>
+					<a href="<?php echo esc_url( admin_url() ); ?>"><?php esc_html_e( 'Admin Dashboard', 'gp-whitelabel' ); ?></a>
 				</p>
 			<?php endif; ?>
 		</div>

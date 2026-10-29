@@ -7,6 +7,16 @@
     "afragen/git-updater-lite": "^3.0"
   },
   "scripts": {
+    "i18n": [
+      "@make-pot",
+      "@make-json"
+    ],
+    "make-pot": [
+      "wp i18n make-pot . languages/gp-whitelabel.pot --domain=gp-whitelabel --exclude=\".github,bin,deploy,node_modules,vendor,vendor-prefixed\" --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/helgatheviking/gp-whitelabel/issues\"}'"
+    ],
+    "make-json": [
+      "wp i18n make-json languages/"
+    ],
     "prefix-namespaces": [
       "sh -c 'test -f bin/strauss.phar || { mkdir -p bin && curl -fL -o bin/strauss.phar https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar; }'",
       "@php bin/strauss.phar",
@@ -31,5 +41,14 @@
   "config": {
     "optimize-autoloader": true,
     "sort-packages": true
+  },
+  "require-dev": {
+    "wp-cli/i18n-command": "^2.7"
+  },
+  "scripts-descriptions": {
+    "i18n": "Generate translation files (POT and JSON) for internationalization",
+    "make-pot": "Generate a POT file for translations",
+    "make-json": "Generate JSON translation files from POT files for JavaScript internationalization",
+    "prefix-namespaces": "Use Strauss to prefix namespaces of composer packages"
   }
 }

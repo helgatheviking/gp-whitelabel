@@ -2,6 +2,7 @@
 /node_modules/
 /vendor/
 /vendor-prefixed/
+/languages/
 /bin/strauss.phar
 
 # Build and release artifacts

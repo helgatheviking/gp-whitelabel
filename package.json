@@ -9,6 +9,7 @@
     "includes/",
     "templates/",
     "assets/",
+    "languages/",
     "vendor-prefixed/"
   ],
   "scripts": {
@@ -18,7 +19,7 @@
     "update-version": "node bin/update-version.js",
     "version": "npm run update-version && git add gp-whitelabel.php",
     "postversion": "git push --follow-tags",
-    "build": "npm run composer:dev && npm run composer:prod && npm run zip && npm run composer:dev"
+    "build": "npm run composer:dev && composer run i18n && npm run composer:prod && npm run zip && npm run composer:dev"
   },
   "devDependencies": {
     "@wordpress/scripts": "^36.1.0"

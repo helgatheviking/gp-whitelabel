@@ -17,6 +17,7 @@ jobs:
   # - Checks out the repository.
   # - Sets up PHP with Composer.
   # - Install Composer dependencies (prefixed with Strauss).
+  # - Generate POT file.
   # - Setup NodeJS and install NPM dependencies.
   # - Get release version and pre-release status.
   # - Build changelog from commits.
@@ -43,7 +44,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
-          tools: composer
+          tools: composer, wp-cli
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -69,6 +70,18 @@ jobs:
       - name: "Install Composer dependencies."
         run: |
           composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+      # Uses the WP-CLI installed by setup-php, which bundles the i18n command.
+      - name: "Generate POT file."
+        run: |
+          composer make-pot
+
+      - name: "Verify POT file exists."
+        run: |
+          if [ ! -f ./languages/gp-whitelabel.pot ]; then
+            echo "::error::languages/gp-whitelabel.pot missing."
+            exit 1
+          fi
 
       - name: "Verify prefixed packages."
         run: |

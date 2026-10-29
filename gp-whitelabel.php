@@ -3,9 +3,11 @@
  * Plugin Name: GlotPress Whitelabel Studio
  * Description: White-labels GlotPress to match your brand identity, custom logo, tagline, fonts, and color schemes via a dedicated Customizer page.
  * Version: 1.0.0
- * Author: Antigravity
+ * Author: helgatheviking
+ * Author URI: https://github.com/helgatheviking
  * License: GPLv2 or later
- * Text Domain: glotpress-whitelabel
+ * Text Domain: gp-whitelabel
+ * Domain Path: /languages
  * Update URI: https://www.backcourt.io
  */
 
