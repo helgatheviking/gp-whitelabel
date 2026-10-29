@@ -206,9 +206,9 @@ body,
 	margin-bottom: 1.5rem !important;
 }
 
-.gp-content #translations th,
-.gp-content table.translations th,
-.gp-table th {
+.gp-content #translations thead th,
+.gp-content table.translations thead th,
+.gp-table thead th {
 	background-color: #003E56 !important;
 	color: #ffffff !important;
 	font-weight: 600 !important;
@@ -220,26 +220,31 @@ body,
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
+.gp-content #translations tbody th,
 .gp-content #translations td,
+.gp-content table.translations tbody th,
 .gp-content table.translations td,
+.gp-table tbody th,
 .gp-table td {
 	padding: 14px 16px !important;
+	border: none !important;
+	border-top: 1px solid var(--gp-color-border-muted, #eef2f5) !important;
 	vertical-align: middle !important;
 	font-size: 0.92rem !important;
 	line-height: 1.5 !important;
 }
 
-.gp-content #translations td.checkbox,
-.gp-content table.translations td.checkbox,
-.gp-table td.checkbox {
+.gp-content #translations .checkbox,
+.gp-content table.translations .checkbox,
+.gp-table .checkbox {
 	padding-left: 16px !important;
 	padding-right: 12px !important;
 	width: 40px !important;
 	text-align: center !important;
 }
 
-.gp-content #translations td.checkbox input[type="checkbox"],
-.gp-content table.translations td.checkbox input[type="checkbox"] {
+.gp-content #translations .checkbox input[type="checkbox"],
+.gp-content table.translations .checkbox input[type="checkbox"] {
 	margin: 0 !important;
 	vertical-align: middle !important;
 	width: 16px !important;
