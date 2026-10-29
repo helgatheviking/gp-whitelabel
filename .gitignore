@@ -1,6 +1,15 @@
+# Dependencies
 /node_modules/
 /vendor/
 /vendor-prefixed/
 /bin/strauss.phar
-/gp-whitelabel.zip
+
+# Build and release artifacts
+/deploy/
+*.zip
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.log
 /.vscode/sftp.json

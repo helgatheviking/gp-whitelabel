@@ -14,7 +14,10 @@
   "scripts": {
     "composer:dev": "composer install --no-interaction",
     "composer:prod": "composer install --no-dev --optimize-autoloader --no-interaction",
-    "zip": "wp-scripts plugin-zip",
+    "zip": "wp-scripts plugin-zip && mkdir -p deploy && mv gp-whitelabel.zip deploy/",
+    "update-version": "node bin/update-version.js",
+    "version": "npm run update-version && git add gp-whitelabel.php",
+    "postversion": "git push --follow-tags",
     "build": "npm run composer:dev && npm run composer:prod && npm run zip && npm run composer:dev"
   },
   "devDependencies": {

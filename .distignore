@@ -1,0 +1,15 @@
+/.git
+/.github
+/.vscode
+/node_modules
+/deploy
+/package.json
+/package-lock.json
+/.distignore
+/.npmrc
+/composer.json
+/composer.lock
+/.gitignore
+/.gitattributes
+/README.md
+/bin
