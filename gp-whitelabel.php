@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Whitelabel Customization for GlotPress
  * Description: White-labels GlotPress to match your brand identity, custom logo, tagline, fonts, and color schemes via a dedicated Customizer page.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: helgatheviking
  * Author URI: https://github.com/helgatheviking
  * License: GPLv2 or later
