@@ -49,7 +49,15 @@ add_action( 'init', 'gp_whitelabel_register_styles' );
  * Enqueue custom style in GlotPress templates and inject dynamic CSS custom properties.
  */
 function gp_whitelabel_enqueue_styles( $template, $args ) {
+	static $done = false;
+
+	// This hook fires for every template part; only add the inline CSS once.
+	if ( $done ) {
+		return;
+	}
+
 	if ( function_exists( 'gp_enqueue_style' ) ) {
+		$done = true;
 		gp_enqueue_style( 'glotpress-whitelabel-css' );
 
 		$options = gp_whitelabel_get_options();
@@ -84,7 +92,7 @@ function gp_whitelabel_enqueue_styles( $template, $args ) {
 				--gp-color-btn-primary-hover-border: {$btn_primary_hover_bg};
 			}
 			.gp-bar { background-color: {$header_bg} !important; color: {$header_text} !important; }
-			.gp-table th { background-color: {$btn_primary_bg} !important; color: {$btn_primary_text} !important; }
+			.gp-table thead th { background-color: {$btn_primary_bg} !important; color: {$btn_primary_text} !important; }
 			.backcourt-logo-tagline, .gp-whitelabel-logo-tagline { color: {$accent_color} !important; }
 			.gp-bar a:hover, .gp-bar a:focus, .gp-bar a.current { color: {$accent_color} !important; }
 			.backcourt-symbol-svg path { fill: {$accent_color} !important; }
